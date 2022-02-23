@@ -1,17 +1,13 @@
-import React from "react";
-import styled from "styled-components";
-
-const Title = styled.h1`
-  font-size: 5rem;
-  color: purple;
-`;
+import React from 'react'
+import { GlobalStyles } from './styles/global'
 
 function App() {
   return (
     <div className="App">
-      <Title>Hello World</Title>
+      <GlobalStyles />
+      <h1>Hello World</h1>
     </div>
-  );
+  )
 }
 
-export { App };
+export { App }
