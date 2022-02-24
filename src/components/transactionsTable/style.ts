@@ -1,12 +1,12 @@
 import styled from 'styled-components'
 
 export const Container = styled.section`
-  margin-top: 10rem;
+  margin-top: 4rem;
 
   table {
     width: 100%;
 
-    border-spacing: 0.25rem;
+    border-spacing: 0 0.4rem;
 
     th {
       color: var(--text-body);

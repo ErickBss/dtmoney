@@ -6,7 +6,7 @@ export const Container = styled.section`
 
   gap: 2rem;
 
-  margin-top: -10rem;
+  margin-top: -8rem;
 
   header {
     display: flex;
