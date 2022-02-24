@@ -10,7 +10,6 @@ function App() {
       <GlobalStyles />
       <Header />
       <Dashboard />
-      <h1>Hello World</h1>
     </>
   )
 }
