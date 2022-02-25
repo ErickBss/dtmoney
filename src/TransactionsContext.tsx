@@ -3,7 +3,7 @@ import { api } from './services/api'
 
 type TransactionsContextProps = {
   transactions: TransactionProps[]
-  createTransaction: (transactions: TransactionInputProps) => void
+  createTransaction: (transactions: TransactionInputProps) => Promise<void>
 }
 
 export const TransactionsContext = createContext<TransactionsContextProps>(
@@ -37,8 +37,14 @@ export function TransactionsProvider({ children }: TransactionsProviderProps) {
       .then((response) => setTransaction(response.data.transactions))
   }, [])
 
-  function createTransaction(transaction: TransactionInputProps) {
-    api.post('/transactions', transaction)
+  async function createTransaction(transactionInput: TransactionInputProps) {
+    const response = await api.post('/transactions', {
+      ...transactionInput,
+      createdAt: new Date(),
+    })
+    const transaction = response.data.transactions
+
+    setTransaction([...transactions, transaction])
   }
 
   return (
