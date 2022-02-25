@@ -35,7 +35,7 @@ export const Container = styled.section`
         color: var(--green);
       }
 
-      &.payment {
+      &.withdraw {
         color: var(--red);
       }
     }

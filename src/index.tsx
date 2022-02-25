@@ -7,8 +7,32 @@ import { App } from './App'
 
 createServer({
   models: {
-    transaction: Model,
+    transactions: Model,
   },
+
+  seeds(server) {
+    server.db.loadData({
+      transactions: [
+        {
+          id: 1,
+          title: 'Website',
+          type: 'deposit',
+          category: 'Work',
+          amount: 7000,
+          createdAt: new Date('2022-02-12 12:00:00'),
+        },
+        {
+          id: 2,
+          title: 'Rent',
+          type: 'withdraw',
+          category: 'Payment',
+          amount: 1000,
+          createdAt: new Date('2022-02-19 12:00:00'),
+        },
+      ],
+    })
+  },
+
   routes() {
     this.namespace = 'api' // all the ways with route api, the mirage will intercept
 
